@@ -19,7 +19,7 @@ class AdminMiddleware
         if (Auth::check() && Auth::user()->role() === "admin") {
             return $next($request);
         }
-
+        
         $arrayRoute = ['profile.edit', 'profile.update', 'profile.destroy', 'projects.index', 'project.getdata', 'tasks.index', 'tasks.taskgetdata', 'tasks.getdeadline', 'projects.tasks.index', 'apiprojectdata'];
 
         if (Auth::check() && Auth::user()->role() === "viewer") {
